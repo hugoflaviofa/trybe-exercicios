@@ -1,11 +1,9 @@
-const a = 100;
-const b = 400;
-const c = 300;
+const a = 10;
 
-if (a > b && a > c) {
-    console.log("O primeiro número é o maior");
-} else if (b > c) {
-    console.log("O segundo número é o maior");
+if (a > 0) {
+    console.log("positive");
+} else if (a < 0) {
+    console.log("negative");
 } else {
-    console.log("O terceiro número é o maior");
+    console.log("zero");
 }
