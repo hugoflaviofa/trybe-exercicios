@@ -1,9 +1,17 @@
-const a = 10;
+const a = 80;
+const b = 70;
+const c = 20;
 
-if (a > 0) {
-    console.log("positive");
-} else if (a < 0) {
-    console.log("negative");
+// Sabemos que a soma dos ângulos de um triângulo equivale a 180 graus e que o ângulo deve ser > 0 e < 180, logo:
+
+if (a >= 180 || b >= 180 || c >= 180) {
+    console.log("Angulo inválido");
+} else if (a <= 0 || b <= 0 || c <= 0) {
+    console.log("Angulo inválido");
 } else {
-    console.log("zero");
+    if (a + b + c == 180) {
+        console.log("true");
+    } else {
+        console.log("false")
+    }
 }
