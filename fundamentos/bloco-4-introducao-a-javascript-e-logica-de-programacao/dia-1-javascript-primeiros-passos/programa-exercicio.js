@@ -1,8 +1,8 @@
-const a = 55;
-const b = 44;
-const c = 85;
+const a = 54;
+const b = 45;
+const c = 86;
 
-if (a % 2 == 0 || b % 2 == 0 || c % 2 == 0) {
+if (a % 2 == 1 || b % 2 == 1 || c % 2 == 1) {
     console.log("true")
 }else {
     console.log("false")
