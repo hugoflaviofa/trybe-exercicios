@@ -1,17 +1,16 @@
-const a = 80;
-const b = 70;
-const c = 20;
+const pecaDeXadrez = "TOrrE";
 
-// Sabemos que a soma dos ângulos de um triângulo equivale a 180 graus e que o ângulo deve ser > 0 e < 180, logo:
-
-if (a >= 180 || b >= 180 || c >= 180) {
-    console.log("Angulo inválido");
-} else if (a <= 0 || b <= 0 || c <= 0) {
-    console.log("Angulo inválido");
-} else {
-    if (a + b + c == 180) {
-        console.log("true");
-    } else {
-        console.log("false")
-    }
+switch(pecaDeXadrez.toLowerCase()) {
+    case "rei": console.log("Movimento em qualquer direção, porém apenas uma casa por vez");
+        break;
+    case "Rainha": console.log("Movimento em qualquer direção, quantas casas quiser");
+        break;
+    case "torre": console.log("Movimento em linha reta, quantas casas quiser");
+        break;
+    case "bispo": console.log("Movimento na diagonal, quantas casas quiser");
+        break;
+    case "cavalo": console.log("Movimento em L");
+        break;
+    case "peão": console.log("Movimento para frente, uma casa por vez");
+        break;
 }
