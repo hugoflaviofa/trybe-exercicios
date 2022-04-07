@@ -1,9 +1,10 @@
 const a = 100;
-const b = 2;
+const b = 100;
 
-const soma = a + b;
-const subtracao = a - b;
-const multiplicacao = a / b;
-const modulo = a % b;
-
-console.log(soma, subtracao, multiplicacao, modulo)
+if (a > b) {
+    console.log("O primeiro número é o maior");
+} else if (a == b) {
+    console.log("Os números são iguais");
+} else {
+    console.log("O segundo número é o maior");
+}
