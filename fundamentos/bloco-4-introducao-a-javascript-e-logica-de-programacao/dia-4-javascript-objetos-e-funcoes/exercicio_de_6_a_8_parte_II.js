@@ -101,3 +101,44 @@ function repeatedNumber(arrayNumber){
 let arraytest4 = [2, 3, 2, 5, 8, 2, 3];
 
 // console.log(repeatedNumber(arraytest4));
+
+//6 - Crie uma função que receba um número natural (número inteiro não negativo) N e retorne o somatório de todos os números de 1 até N.
+
+function sumNumber(number){
+
+    let result = 0;
+    for(let index = 1; index <= number; index +=1){
+        result += index;
+    }
+    return result;
+}
+
+// console.log(sumNumber(5));
+
+//7 - Crie uma função que receba uma string word e outra string ending . Verifique se a string ending é o final da string word . Considere que a string ending sempre será menor que a string word .
+
+function checkEndWord(stringWord, stringEnding){
+
+//Atraves de uma variavel contadora que somente acrescentará +1 caso cada letra no seu respectivo index seja igual. Logo se o valor da variavel cntadora for igual ao length de endingWord retorna true.
+
+    let completeWord = stringWord.split('');
+    let endingWord = stringEnding.split('');
+
+    let index2 = endingWord.length - 1;
+    let count = 0;
+
+    for(let index = completeWord.length - 1; index >= 0; index -= 1){
+        if(completeWord[index] === endingWord[index2]){
+            count += 1;          
+        }
+        index2 -= 1;      
+    }
+    if(count === endingWord.length){
+        return true;        
+    }else{
+        return false;
+    }   
+}
+
+// console.log(checkEndWord('trybe', 'be'));
+// console.log(checkEndWord('joaofernando', 'fernan'));
