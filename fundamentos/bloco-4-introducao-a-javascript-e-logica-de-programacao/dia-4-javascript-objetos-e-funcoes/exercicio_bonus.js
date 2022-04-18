@@ -32,10 +32,10 @@ function romanNumeral(numeral){
     let numeralSplit = numeral.split('');
     let numeralConvert = [];
 
-    for(index1 of numeralSplit){
-        for(index2 in romanDigit){          
-            if(index1 === index2){
-                numeralConvert.push(romanDigit[index1]);
+    for(indexArray of numeralSplit){
+        for(internalIndex in romanDigit){          
+            if(indexArray === internalIndex){
+                numeralConvert.push(romanDigit[indexArray]);
             }
         }
     }
@@ -60,4 +60,27 @@ function romanNumeral(numeral){
 
 let test = 'CM';
 
-console.log(romanNumeral(test));
+// console.log(romanNumeral(test));
+
+//2 - Crie uma função chamada arrayOfNumbers que receberá a variável vector como parâmetro. Através de um loop for , percorra essa variável, busque os números pares e os adicione a um novo array que deverá ser retornado ao final pela pela função.
+
+let vector = [[1, 2], [3,4,5,6], [7,8,9,10]];
+
+function arrayOfNumbers(array){
+
+    let positiveList = [];
+
+    for(indexArray of array){
+
+        for(let internalIndex = 0; internalIndex < indexArray.length; internalIndex += 1){
+         
+            if(indexArray[internalIndex] % 2 === 0){
+                positiveList.push(indexArray[internalIndex]);
+            }
+        }
+    }
+    return positiveList;
+}
+
+// console.log(arrayOfNumbers(vector));
+
