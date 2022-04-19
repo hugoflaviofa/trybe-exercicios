@@ -155,3 +155,76 @@ function countFruit(fruitarray){
 }
 
 // console.log(countFruit(basket));
+
+// Usando o objeto abaixo, faça os exercícios a seguir:
+
+let moradores = {
+    blocoUm: [
+      {
+        nome: 'Luiza',
+        sobrenome: 'Guimarães',
+        andar: 10,
+        apartamento: 1005,
+      },
+      {
+        nome: 'William',
+        sobrenome: 'Albuquerque',
+        andar: 5,
+        apartamento: 502,
+      },
+    ],
+    blocoDois: [
+      {
+        nome: 'Murilo',
+        sobrenome: 'Ferraz',
+        andar: 8,
+        apartamento: 804,
+      },
+      {
+        nome: 'Zoey',
+        sobrenome: 'Brooks',
+        andar: 1,
+        apartamento: 101,
+      },
+    ],
+  };
+
+//4 - Acesse as chaves nome , sobrenome , andar e apartamento do último morador do blocoDois e faça um console.log no seguinte formato: "O morador do bloco 2 de nome Zoey Brooks mora no 1° andar, apartamento 101".
+
+  let name = moradores.blocoDois[1].nome;
+  let lastName = moradores.blocoDois[1].sobrenome;
+  let floor = moradores.blocoDois[1].andar;
+  let apartment = moradores.blocoDois[1].apartamento;
+
+  let frase = `O morador do bloco 2 de nome ${name} ${lastName} mora no ${floor}° andar, apartamento ${apartment}`;
+
+//   console.log(frase);
+
+//5 - Utilize o for para imprimir o nome completo de todos os moradores do bloco 1, acessando suas chaves nome e sobrenome , depois faça o mesmo para os moradores do bloco 2.
+
+//Usando um for p cada (basta repetir o mesmo p o bloco seguinte):
+// for(index in moradores.blocoUm){
+//     let name = moradores.blocoUm[index].nome;
+//     let lastName = moradores.blocoUm[index].sobrenome;
+
+//     console.log(name + ' ' + lastName);
+// }
+
+//Usando um unico for para todos:
+let bloco = 1;
+
+for(index in moradores){
+
+    console.log(`---Moradores do bloco ${bloco}---`);
+    
+    for(index2 in moradores[index]){
+
+        let name = moradores[index][index2].nome;
+        let lastName = moradores[index][index2].sobrenome;
+
+        console.log(name + ' ' + lastName);
+
+    }
+    
+    bloco += 1;
+}
