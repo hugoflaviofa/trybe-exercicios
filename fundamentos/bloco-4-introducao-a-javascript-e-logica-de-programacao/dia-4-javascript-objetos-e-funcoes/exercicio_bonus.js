@@ -84,3 +84,74 @@ function arrayOfNumbers(array){
 
 // console.log(arrayOfNumbers(vector));
 
+//3 - A partir do array de frutas basket , retorne um objeto que contenha o nome da fruta como chave e a quantidade de vezes que ela aparece no array como valor. Por exemplo, o array ['Melancia', 'Abacate', 'Melancia', 'Melancia', 'Uva'], deverá retornar { Melancia: 3, Abacate: 1, Uva: 1 } quando passado como argumento para a função.
+// Em seguida, imprima esse resultado na tela com uma mensagem no seguinte formato: Sua cesta possui: x Melancias, x Abacates...
+
+const basket = [
+    'Melancia', 'Abacate', 'Melancia', 'Melancia', 'Uva', 'Laranja',
+    'Jaca', 'Pera', 'Melancia', 'Uva', 'Laranja', 'Melancia',
+    'Banana', 'Uva', 'Pera', 'Abacate', 'Laranja', 'Abacate',
+    'Banana', 'Melancia', 'Laranja', 'Laranja', 'Jaca', 'Uva',
+    'Banana', 'Uva', 'Laranja', 'Pera', 'Melancia', 'Uva',
+    'Jaca', 'Banana', 'Pera', 'Abacate', 'Melancia', 'Melancia',
+    'Laranja', 'Pera', 'Banana', 'Jaca', 'Laranja', 'Melancia',
+    'Abacate', 'Abacate', 'Pera', 'Melancia', 'Banana', 'Banana',
+    'Abacate', 'Uva', 'Laranja', 'Banana', 'Abacate', 'Uva',
+    'Uva', 'Abacate', 'Abacate', 'Melancia', 'Uva', 'Jaca',
+    'Uva', 'Banana', 'Abacate', 'Banana', 'Uva', 'Banana',
+    'Laranja', 'Laranja', 'Jaca', 'Jaca', 'Abacate', 'Jaca',
+    'Laranja', 'Melancia', 'Pera', 'Jaca', 'Melancia', 'Uva',
+    'Abacate', 'Jaca', 'Jaca', 'Abacate', 'Uva', 'Laranja',
+    'Pera', 'Melancia', 'Jaca', 'Pera', 'Laranja', 'Jaca',
+    'Pera', 'Melancia', 'Jaca', 'Banana', 'Laranja', 'Jaca',
+    'Banana', 'Pera', 'Abacate', 'Uva',
+  ];
+
+function countFruit(fruitarray){
+
+    let copyFruitArray = fruitarray; //Copiado array para uso em listIndexArray.push
+
+    let count = 1; //Inicia de 1, pois o proprio elemento já é uma repetição de sí mesmo
+    let listCount = []; //Array armazena a quantidade de repetições para cada string
+
+    let listIndexInArray = []; //Array armazena o index de cada string, referente a primeira vez que o mesmo aparece em fruitarray
+
+    for(let index1 = 0; index1 < fruitarray.length; index1 += 1){ //***Utilizo o loop para contar quantas vezes o elemento se repete a partir do seu indice. Ou seja, a string 'Melancia' no indice 0 aparece quantas vezes dali em diante; a string 'Abacate' no indice 1 aparece quantas vezes dali em diante; etc.
+        
+        listIndexInArray.push(fruitarray.findIndex(fruitarray => fruitarray === copyFruitArray[index1])); //Uso o metodo findIndex, que retorna o índice no array do primeiro elemento que satisfizer a função e acrescento a uma nova lista (listIndexArray). Exemplo: 'Melancia' (dentro do array basket) sempre terá indice 0, pois é a primeira vez que a mesma aparece.
+                
+        for(let index2 = index1 + 1; index2 < fruitarray.length; index2 += 1){ //***
+            if(fruitarray[index1] === fruitarray[index2]){
+                count += 1;
+            }     
+        }
+
+        listCount.push(count);
+        count = 1;
+        index2 = 0;        
+    }
+
+
+    //Reduzir o array listIndexInArray para seus indices sem repetição de valores.
+    let listIndexReduced = [listIndexInArray[0]]; // Já inicia com adição de um valor, pois o primeiro indice de cada array sempre será igual
+
+    for(let index4 = 1; index4 < listIndexInArray.length; index4 += 1){
+        let confirmIndex = listIndexReduced.findIndex(listIndexReduced => listIndexReduced === listIndexInArray[index4]);//Verifico se o indice já existe em listIndexReduced, se existe, retornara o valor do seu indice que é >= 0, se não existe, retornará -1, logo, acrescento o mesmo a lista.
+        if(confirmIndex === -1){
+            listIndexReduced.push(listIndexInArray[index4]);         
+        }       
+    }
+
+    //Crio um objeto vazio e acresncento as propriedades e valors de acordo com os valores contidos em listIndexReduced
+    let fruitTotal = {};
+
+    for(index5 of listIndexReduced){
+        let fruit = fruitarray[index5];
+        let total = listCount[index5];
+
+        fruitTotal[fruit] = total;     
+    }
+    return fruitTotal;    
+}
+
+// console.log(countFruit(basket));
