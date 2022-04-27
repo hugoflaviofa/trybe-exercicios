@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form action="EVIADO" method="get">
+        <section>
+            <div id="name">
+                <label for="name-input">Nome:<input id="name-input" type="text" name="name" minlength="10" maxlength="40" required autofocus></label>
+            </div>
+            <div id="email">
+                <label for="email-input">Email:<input id="email-input" name="email" minlength="10" maxlength="50" required type="email"></label>
+            </div>
+            <fieldset id="destine">
+                <legend>Escolha o seu destino:</legend>
+                <label for="radio1"><input type="radio" name="checkbox" id="radio1" value="city">Cidade</label>
+                <label for="radio2"><input type="radio" name="checkbox" id="radio2" value="field">Campo</label>
+                <label for="radio3"><input type="radio" name="checkbox" id="radio3" value="beach">Praia</label>
+                <label for="radio4"><input type="radio" name="checkbox" id="radio4" value="mountains">Montanhas</label>
+            </fieldset>
+            <div>
+                <p>Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</p>
+                <textarea id="text-area" name="textArea" maxlength="500" cols="75" rows="10"></textarea>
+            </div>
+            <div id="date-box">
+                <label for="data">Qual a melhor data para realizar sua viagem?<input type="date" id="data" name="date"></input:data></label>
+            </div>
+            <fieldset id="check-1">
+                <legend>Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?</legend>
+                <label for="no"><input type="radio" name="confirm" id="no" value="true" checked> Sim</label>
+                <label for="yes"><input type="radio" name="confirm" id="yes" value="false"> Não</label>
+            </fieldset>
+            <div id="acept">
+                <label for="check"><input type="checkbox" name="to-agree" value="true" id="check" checked> Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.</label>
+            </div>
+        </section>
+        <br><br>
+        <input id="submit" type="submit">
+        <input id="reset" type="reset" value="Apagar">
+    </form>
+</body>
+</html>
