@@ -4,6 +4,8 @@ window.onload = function(){
     let resetButton = document.getElementById('reset');
     // let nameInput = document.getElementById('name-input');
 
+    
+
     submitButton.addEventListener('click', function(event){
         event.preventDefault();
     });
