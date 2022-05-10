@@ -38,25 +38,10 @@ const testingScopeArowFunc = (escopo) => {
 
 const oddsAndEvens = [13, 3, 4, 10, 7, 2, 22, 31, 18, 14];
 
-const arrayNumberSort = (array) => {
-
-  array.sort();
-  let saveArray = []; 
-  // console.log(array);
-  for (i = 0; i < array.length; i += 1) {
-
-    if (array[i] > 9) {
-
-      let save = array.shift();
-
-      array.push(save);
-      
-    }
-    
-  }
-
-  return array;
+const arrayNumberSort = array => array.sort(function(a, b){return a - b});
+const arrayNumberSorT = array => array.sort(func = (a, b) => b - a);
   
-}
 
-console.log(`Os números ${arrayNumberSort(oddsAndEvens)} se encontram ordenados de forma crescente!`); // será necessário alterar essa linha
+
+console.log(`Os números ${arrayNumberSort(oddsAndEvens)} se encontram ordenados de forma crescente!`); 
+console.log(`Os números ${arrayNumberSorT(oddsAndEvens)} se encontram ordenados de forma crescente!`); 
