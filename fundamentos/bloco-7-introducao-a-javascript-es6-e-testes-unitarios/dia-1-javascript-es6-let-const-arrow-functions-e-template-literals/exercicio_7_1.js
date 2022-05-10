@@ -41,7 +41,5 @@ const oddsAndEvens = [13, 3, 4, 10, 7, 2, 22, 31, 18, 14];
 const arrayNumberSort = array => array.sort(function(a, b){return a - b});
 const arrayNumberSorT = array => array.sort(func = (a, b) => b - a);
   
-
-
 console.log(`Os números ${arrayNumberSort(oddsAndEvens)} se encontram ordenados de forma crescente!`); 
 console.log(`Os números ${arrayNumberSorT(oddsAndEvens)} se encontram ordenados de forma crescente!`); 
